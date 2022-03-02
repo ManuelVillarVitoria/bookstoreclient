@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+-14.15.4
+
+script:
+- "npm run build"
+- "npm run test:nowatch"
+
+deploy:
+ provide: heroku
+ api_key:
+   secure: $HEROKU_TOKEN
+   app: books-store-webapp
